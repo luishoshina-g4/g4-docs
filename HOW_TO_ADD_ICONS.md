@@ -1,3 +1,5 @@
+![Logo](https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/354037739_1150873909138616_5563000492426352288_n.png?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Y939xgeWdBkQ7kNvgHBM1xf&_nc_ht=scontent.fcgh9-1.fna&oh=00_AYAXwtdNpSRor0KbztOOZKgAjpwsF4_icw9qYXLUUOND-g&oe=6654760E)
+
 # Como adicionar um svg no componente icons.
 
 ##### Aqui estão alguns passos para vocês conseguirem adicionar seus svg ao componente de icones em apenas 3 passos.
