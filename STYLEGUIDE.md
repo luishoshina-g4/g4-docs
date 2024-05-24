@@ -315,9 +315,12 @@ Nesse caso, a criação de uma nova classe de componente CSS compartilhada com @
 
 Quando classes CSS são selecionadas ou geradas dinamicamente, não use concatenação de string para combinar fragmentos da classe completa. Em vez disso, alterne entre as strings completas.
 
-Você sempre deve querer a string completa de cada classe utilitária presente na marcação para facilitar o raciocínio e garantir que ela sobreviva ao processo `PurgeCSS`.
-
 _Existem excessões em que é precisa usar `inline styles`, mas são casos específicos e estarão atrelados a apenas uma propriedade!_
+
+```tsx
+  // Ruim
+  <div style={{ width: "100%", height: "250px", color: "blue"}}>Exemplo Ruim</div>
+```
 
 ## Tipando componentes
 
@@ -415,37 +418,25 @@ Evite usar o prefixo `image` ou `picture` porque os leitores de tela ja adiciona
 
 ## Estrutura de pastas do projeto
 
+Estamos utilizando o pattern `Atomic Design` para organizar nossos arquivos
+
 ```
 📦 g4-dinamyc-form
  ┣ 📂 public
- ┃ ┃┗  arquivos publicos como robots.txt, favicons, sitemap.xml e etc.
+ ┃ ┗  arquivos publicos como robots.txt, favicons, sitemap.xml e etc.
  ┣ 📂 src
- ┃ ┣ 📂 api
- ┃ ┃  ┗  App.tsx
- ┃ ┣ 📂 app
- ┃ ┃  ┗  App.tsx
+ ┃ ┣ 📂 api | requisições da aplicação.
+ ┃ ┣ 📂 app | pasta principal da aplicação.
+ ┃ ┣ 📂 assets
+ ┃ ┃ ┣ 📂 icons
+ ┃ ┃ ┣ 📂 images
  ┃ ┣ 📂 components
- ┃ ┃  ┗  Componentes de alta usabilidade
- ┃ ┃ 📂 hooks
- ┃ ┃  ┗  Hooks customizados de alta reusabilidade
- ┃ ┃ 📂 pages
- ┃ ┃  ┗  Páginas da aplicação
- ┃ ┃ 📂 store
- ┃ ┃  ┗  Store geral da aplicação
- ┃ ┃ 📂 styles
- ┃ ┃  ┗  Estilos globais
- ┃ ┃ 📂 utils
- ┃ ┃  ┗  Funções/classes de alta reusabilidade
- ┃ ┃ 📂 services
- ┃ ┃  ┗  Serviços externos a aplicação
- ┃ ┃ 📂 config
- ┃ ┃  ┗  Configurações de módulos
- ┃ ┃ 📂 snippets
- ┃ ┃  ┗  Snippets usados na aplicação
- ┃ ┃ 📂 interfaces
- ┃ ┃  ┗  Interfaces que não são relativas a um módulo específico
- ┃ ┃ 📂 constants
- ┃ ┃  ┗  Constantes que não são relativas a um módulo específico
- ┃ ┃ 📂 enums
- ┃ ┃  ┗  Enums que não são relativos a um módulo específico
+ ┃ ┃ ┣ 📂 atoms | componentes básicos, pequenos e isolados unicamente.
+ ┃ ┃ ┣ 📂 molecules | componentes simples apartir da pasta `atoms`.
+ ┃ ┃ ┣ 📂 organisms | componentes que podem ser utilizados pra construir interfaces.
+ ┃ ┃ ┣ 📂 templates | componentes páginas.
+ ┃ ┃ 📂 constants | constantes que não são relativas a um módulo específico
+ ┃ ┃ 📂 context | gerenciamento e compartilhamento de estados globais
+ ┃ ┃ 📂 enum | conjunto finito de valores unicos da aplicação
+ ┃ ┃ 📂 utils | funções/classes de alta usabilidade
 ```
