@@ -1,6 +1,6 @@
-![Logo](https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/354037739_1150873909138616_5563000492426352288_n.png?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Y939xgeWdBkQ7kNvgHBM1xf&_nc_ht=scontent.fcgh9-1.fna&oh=00_AYAXwtdNpSRor0KbztOOZKgAjpwsF4_icw9qYXLUUOND-g&oe=6654760E)
+[Voltar](../README.md)
 
-# Guias de Estilos
+# Guia de Desenvolvimento
 
 Referência de estilos com os patterns utilizados no `Google JavaScript Style Guide`
 
@@ -18,23 +18,8 @@ Referência de estilos com os patterns utilizados no `Google JavaScript Style Gu
 8.  [Class Component](#class-component)
 9.  [Estilizando componentes](#estilizando-componentes)
 10. [Tipando componentes](#tipando-componentes)
-11. [Testes unitários](#testes-unitários)
-12. [Alt em imagens](#alt-em-imagens)
-13. [Estruturas de pastas](#estrutura-de-pastas)
-
-<a name="regras-basicas"></a>
-<a name="estrutura-de-componentes"></a>
-<a name="criando-componentes"></a>
-<a name="exportando-arquivos"></a>
-<a name="custom-hooks"></a>
-<a name="arquivos-em-pascalcase"></a>
-<a name="nomeando-coisa"></a>
-<a name="class-component"></a>
-<a name="estilizando-componentes"></a>
-<a name="tipando-componentes"></a>
-<a name="testes-unitários"></a>
-<a name="alt-em-images"></a>
-<a name="estrutura-de-pastas"></a>
+11. [Alt em imagens](#alt-em-imagens)
+12. [Estruturas de pastas](#estrutura-de-pastas)
 
 ## Regras básicas
 
@@ -49,25 +34,35 @@ Referência de estilos com os patterns utilizados no `Google JavaScript Style Gu
 
 ## Estrutura de componentes
 
+Este projeto está usando o pattern `Atomic Design` para components.
+
+```
+┣ 📂 components
+┃  ┣ 📂 atoms
+┃  ┣ 📂 molecules
+┃  ┣ 📂 organisms
+┃  ┗ 📂 templates
+```
+
 - Separe a pasta do seu componente em 4 arquivos
-  - Componente.tsx (seu componente em si)
   - Componente.spec.tsx (testes do componente)
-  - Componente.module.scss (seus estilos)
+  - Componente.tsx (seu componente em si)
   - Componente.types.ts (interfaces e types do componente)
 
 ```
-┣ components
-┃  ┣ MyComponent.module.scss
-┃  └─ MyComponent.spec.tsx
-┃  └─ MyComponent.tsx
-┃  └─ MyComponent.types.ts
+┣ 📂 component
+┃  ┣ MyComponent.spec.tsx
+┃  ┣ MyComponent.tsx
+┃  ┗ MyComponent.types.ts
 ```
 
 [Voltar ao Sumário](#sumário)
 
 ## Criando componentes
 
-Todos os componentes serão criados em **`funções normais`**, `arrow functions` **apenas** dentro dos componentes
+Todos os componentes serão criados em **`funções normais`**.
+
+> `arrow functions` **apenas** dentro dos componentes
 
 ```typescript
 // Bom
@@ -165,7 +160,7 @@ export function useHook() {
 Iremos seguir o padrão PascalCase que consiste em nomear todas as palavras com a primeira letra maiúscula.
 
 ```
-┣ components
+┣ 📂 component
 ┃  ┣ MyComponentHere.tsx
 ```
 
@@ -296,8 +291,9 @@ Também observe que, por padrão, o ponto de interrupção `sm:` não começa em
 
 Portanto, se você quiser que algo se aplique apenas para as menores visualizações, você deve primeiro configurá-lo para aplicar a todos os pontos de interrupção e depois substituí-lo para pontos de interrupção maiores.
 
+> Se você quiser que algo apareça como block apenas para as menores telas
+
 ```tsx
- // Se você quiser que algo apareça como block apenas para as menores telas
  <div class="sm:inline">Exemplo</div>
 ```
 
@@ -315,12 +311,9 @@ Nesse caso, a criação de uma nova classe de componente CSS compartilhada com @
 
 Quando classes CSS são selecionadas ou geradas dinamicamente, não use concatenação de string para combinar fragmentos da classe completa. Em vez disso, alterne entre as strings completas.
 
-_Existem excessões em que é precisa usar `inline styles`, mas são casos específicos e estarão atrelados a apenas uma propriedade!_
+Você sempre deve querer a string completa de cada classe utilitária presente na marcação para facilitar o raciocínio e garantir que ela sobreviva ao processo `PurgeCSS`.
 
-```tsx
-  // Ruim
-  <div style={{ width: "100%", height: "250px", color: "blue"}}>Exemplo Ruim</div>
-```
+_Existem excessões em que é precisa usar `inline styles`, mas são casos específicos e estarão atrelados a apenas uma propriedade!_
 
 ## Tipando componentes
 
@@ -376,27 +369,6 @@ enum ECoisas = { /* ... */ }
 type Coisas = { /* ... */ }
 ```
 
-## Testes unitários
-
-Tente ser o mais claro para descrever seus testes, descreva a ação que você vai fazer como `describe()` e use o `it()` para descrever a ação esperada do teste. Siga esse padrão:
-_Evite a palavra "should" seguida do `it`, faça sua sentença ser hiperativa, como "it has", "it renders", "it fails" e etc. Isso serve pra evitar que toda descrição de um teste inicie por "should"._
-
-```ts
-describe('MyButtonComponent', () => {
-  describe('when initialize', () => {
-    it('shows the button on screen', () => {
-      // ...
-    });
-
-    describe('when click', () => {
-      it('calls the handleButton function ', () => {
-        // ...
-      });
-    });
-  });
-});
-```
-
 ## Alt em imagens
 
 SEMPRE coloque o atributo `alt` quando for usar alguma imagem no projeto, é bom por causa do `SEO` (mesmo que esse projeto não seja web) e acessibilidade.
@@ -417,8 +389,6 @@ Evite usar o prefixo `image` ou `picture` porque os leitores de tela ja adiciona
 ```
 
 ## Estrutura de pastas do projeto
-
-Estamos utilizando o pattern `Atomic Design` para organizar nossos arquivos
 
 ```
 📦 g4-dinamyc-form
