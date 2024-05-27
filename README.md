@@ -1,4 +1,8 @@
-![Logo](https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/354037739_1150873909138616_5563000492426352288_n.png?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Y939xgeWdBkQ7kNvgHBM1xf&_nc_ht=scontent.fcgh9-1.fna&oh=00_AYAXwtdNpSRor0KbztOOZKgAjpwsF4_icw9qYXLUUOND-g&oe=6654760E)
+<<<<<<< HEAD
+![Logo](./docs/img/354037739_1150873909138616_5563000492426352288_n.png)
+=======
+![Logo](./img/g4-banner.png)
+>>>>>>> 323ae76 (docs: update files)
 
 # Documentação | g4-dinaymic-form
 
@@ -7,31 +11,23 @@ Este repositório abriga a base de código dos formulários G4 Educação constr
 ## Índices
 
 - [Geral](#geral)
-  - [Comandos CLI](#comandos-cli)
-  - [Introdução](#introdução)
-  - [Configuração de Ferramentas](#configuração-de-ferramentas)
-  - [Configurações do Servidor](#configurações-do-servidor)
-  - [Debug](#debug)
-  - [FAQ](#faq)
-  - [Dicas](#dicas)
-  - [Remoção](#remoção)
-  - [Extração de Componentes](#extração-de-componentes)
+  - [Código de Conduta](./docs/CODE_OF_CONDUCT.md)
+  -  [Regras básicas](./docs/STYLEGUIDE.md#regras-básicas)
+  -  [Estrutura de componentes](./docs/STYLEGUIDE.md#estrutura-de-componentes)
+  -  [Criando componentes](./docs/STYLEGUIDE.md#criando-componentes)
+  -  [Exportando arquivos](./docs/STYLEGUIDE.md#exportando-arquivos)
+  -  [Custom hooks](./docs/STYLEGUIDE.md#custom-hooks)
+  -  [Arquivos em PascalCase](./docs/STYLEGUIDE.md#arquivos-em-pascalcase)
+  -  [Nomeando arquivos](./docs/STYLEGUIDE.md#nomeando-coisas)
+  -  [Class Component](./docs/STYLEGUIDE.md#class-component)
+  -  [Estilizando componentes](./docs/STYLEGUIDE.md#estilizando-componentes)
+  - [Tipando componentes](./docs/STYLEGUIDE.md#tipando-componentes)
+  - [Alt em imagens](./docs/STYLEGUIDE.md#alt-em-imagens)
+  - [Estruturas de pastas](./docs/STYLEGUIDE.md#estrutura-de-pastas)
 
-- [Testes](#testes)
-  - [Testes Unitários](#testes-unitários)
-  - [Testes de Componentes](#testes-de-componentes)
-  - [Testes Remotos](#testes-remotos)
+- [Guia de Desenvolvimento](./docs/STYLEGUIDE.md)
 
-- [Estilização (CSS)](#estilização-css)
-  - [CSS de Nova Geração](#css-de-nova-geração)
-  - [Suporte a CSS](#suporte-a-css)
-  - [Folha de Estilos](#folha-de-estilos)
-  - [Módulos CSS](#módulos-css)
-  - [Sass](#sass)
-  - [LESS](#less)
-
-- [JavaScript](#javascript)
-  - [Roteamento](#roteamento)
+- [Testes Unitários](./docs/UNITS_TESTS.md)
 
 - [Manutenção](#manutenção)
   - [Convenção de Commits](./docs/CONVENTIONAL_COMMITS.md)
