@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-![Logo](./docs/img/354037739_1150873909138616_5563000492426352288_n.png)
-=======
 ![Logo](./img/g4-banner.png)
->>>>>>> 323ae76 (docs: update files)
 
 # Documentação | g4-dinaymic-form
 
