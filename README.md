@@ -6,22 +6,20 @@ Este repositório abriga a base de código dos formulários G4 Educação constr
 
 ## Índices
 
-- [Geral](#geral)
+- [Guia de Desenvolvimento](#geral)
   - [Código de Conduta](./docs/CODE_OF_CONDUCT.md)
-  -  [Regras básicas](./docs/STYLEGUIDE.md#regras-básicas)
-  -  [Estrutura de componentes](./docs/STYLEGUIDE.md#estrutura-de-componentes)
-  -  [Criando componentes](./docs/STYLEGUIDE.md#criando-componentes)
-  -  [Exportando arquivos](./docs/STYLEGUIDE.md#exportando-arquivos)
-  -  [Custom hooks](./docs/STYLEGUIDE.md#custom-hooks)
-  -  [Arquivos em PascalCase](./docs/STYLEGUIDE.md#arquivos-em-pascalcase)
-  -  [Nomeando arquivos](./docs/STYLEGUIDE.md#nomeando-coisas)
-  -  [Class Component](./docs/STYLEGUIDE.md#class-component)
-  -  [Estilizando componentes](./docs/STYLEGUIDE.md#estilizando-componentes)
+  - [Regras básicas](./docs/STYLEGUIDE.md#regras-básicas)
+  - [Estrutura de componentes](./docs/STYLEGUIDE.md#estrutura-de-componentes)
+  - [Criando componentes](./docs/STYLEGUIDE.md#criando-componentes)
+  - [Exportando arquivos](./docs/STYLEGUIDE.md#exportando-arquivos)
+  - [Custom hooks](./docs/STYLEGUIDE.md#custom-hooks)
+  - [Componentes em PascalCase](./docs/STYLEGUIDE.md#componentes-em-pascalcase)
+  - [Nomeando arquivos](./docs/STYLEGUIDE.md#nomeando-coisas)
+  - [Class Component](./docs/STYLEGUIDE.md#class-component)
+  - [Estilizando componentes](./docs/STYLEGUIDE.md#estilizando-componentes)
   - [Tipando componentes](./docs/STYLEGUIDE.md#tipando-componentes)
   - [Alt em imagens](./docs/STYLEGUIDE.md#alt-em-imagens)
   - [Estruturas de pastas](./docs/STYLEGUIDE.md#estrutura-de-pastas)
-
-- [Guia de Desenvolvimento](./docs/STYLEGUIDE.md)
 
 - [Testes Unitários](./docs/UNITS_TESTS.md)
 
