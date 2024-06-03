@@ -2,41 +2,42 @@
 
 # Nomenclatura de Commits
 
-### Aqui estão algumas diretrizes que usamos para padronizar nossas mensagens de commit em apenas três passos.
+Aqui estão algumas diretrizes que usamos para padronizar nossas mensagens de commit em apenas três passos.
 
-_Não há uma ordem específica, mas para fins educativos, vamos seguir os passos abaixo._
+## Sumário:
 
-## 1.1 - Estrutura do Commit
+1. [Padronização de Commit](#padronização-de-commits)
+    - [Nomenclatura](#nomenclatura)
+    - [Escopos](#escopo-opcional)
+    - [Descrição](#descrição)
+    - [Corpo](#corpo)
+    - [Rodapé](#rodapé)
+2. [Check-list](#check-list-de-commit)
+3. [Realização de Commits](#realização-do-commit)
+3. [Testando](#testando)
 
-Cada commit deve seguir a estrutura padrão do Conventional Commits. 
+
+## Padronização de Commits
+
+Cada commit deve seguir a estrutura simplificada do padrão Conventional Commits. 
 
 _Estrutura básica de cada commit:_
 
 ```plaintext
-
 <tipo>(escopo opcional): <descrição>
 
-[corpo opcional]
-
-[rodapé opcional]
-
+[link  para task no notion]
 ```
 
-_Exemplo:_
-
-```plaintext
-
+| _Exemplo:_
+```md
 feat(auth): add user authentication
 
-Added a new user authentication feature using JWT tokens.
-
-Closes #45
-
+[Clique aqui para acessar a Task](https://www.notion.so/g40/MARTECH-REDESIGN-WEBSITE-Mapear-eventos-do-novo-componente-de-agenda-com-galeria-accordeon--46665e4673044014a4b207b8e591c2b1)
 ```
+## Tipos de Commit
 
-## 1.2 - Tipos de Commit
-
-#### Tipos Comuns:
+#### Nomenclatura:
 
 - **feat**: Nova funcionalidade para o usuário.
 
@@ -60,7 +61,7 @@ Closes #45
 
 - **revert**: Reversão de um commit anterior.
 
-## 2.1 - Escopo (Opcional)
+## Escopo (Opcional)
 
 O escopo, que é opcional, deve ser uma palavra descrevendo a parte do código alterada (por exemplo: `auth`, `api`, `ui`).
 
@@ -69,10 +70,9 @@ _Exemplo:_
 fix(api): handle user not found error
 ```
 
-## 2.2 - Descrição
+## Descrição
 
 A descrição deve ser uma linha concisa explicando a alteração. Esta linha deve:
-- Começar com letra maiúscula
 - Ser imperativa
 - Não terminar com um ponto final.
 
@@ -82,22 +82,16 @@ _Exemplo:_
 docs: update README with setup instructions
 ```
 
-## 3.0 - Corpo e Rodapé (Opcional)
-
 ### Corpo:
 
-- O corpo deve explicar "o quê” e “por que”, de preferência evitando o "como".
-
-- Pode ter várias linhas, com quebra de linha entre parágrafos.
+- O corpo deve conter um link que redireciona a interação pra task no notion.
 
 _Exemplo:_
 
-```plaintext
+```md
 fix(auth): resolve issue with token validation
 
-This fix ensures that expired tokens are handled gracefully.
-The expiration time is now validated correctly, and a new custom error is thrown
-when the token has expired.
+[Clique aqui para acessar a task]()
 ```
 
 ### Rodapé:
@@ -106,9 +100,9 @@ when the token has expired.
 
 _Exemplo:_
 
-```plaintext
+```md
 
-BREAKING CHANGE: The 'auth' module's API has been changed to accommodate new validation rules.
+[Clique aqui para acessar a task]()
 
 Closes #123
 ```
@@ -134,6 +128,20 @@ _Exemplo: `This fix ensures that...`_
 5. **Rodapé (Opcional)**: Use o rodapé para fechar issues ou mencionar breaking changes.
 
 _Exemplo: `Closes #123`_
+
+## Realização do Commit
+
+Para realizar seu coomit de forma padronizada, utilizamos o [Husky](), [Commitizen]() e também [CommitLint]().
+
+Os commits devem ser realizados da seguinte forma.
+
+```c
+// Exemplo Bom
+yarn commit
+
+// Exemplo Ruim
+git commit -m "Exemplo Ruim"
+```
 
 ### Pronto, agora seu commit está padronizado de acordo com a documentação!
 
